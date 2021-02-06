@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script>
+      var question = ["How many soccer players should each team have on the field at the start of each match?","In what year was the first-ever Wimbledon Championship held?","Which email service is owned by Microsoft?","What year was the very first model of the iPhone released?","What part of the atom has no electric charge?","Which planet is the hottest in the solar system?","Which animal can be seen on the Porsche logo?","In what year was the Corvette introduced?","What name does deer meat go by?","What is the common name for dried plums?","What is the national dish of Spain?","Which country produces the most coffee in the world?"]
+      var answer = ["11","1877","Hotmail","2007","Neutron","Venus","Horse","1953","Venison","Prunes","Paella","Brazil"]
+      var number = 0;
+      var string = "";
+      var check = "";
+      function startCode(){
+        number = Math.floor((Math.random() * 12) + 0);
+        string = question[number];
+        var score = "Your score is: " + 0;
+        document.getElementById('output').innerHTML = string;
+        document.getElementById('output2').innerHTML = score;
+      }
+      function checkAnswers(){
+        check = answer[number];
+        var userAns = document.getElementById('input').value;
+        if(check == userAns){
+          document.getElementById('output2').innerHTML = "Congratulations! You got that question correct. Score +1.";
+        }
+      }
+    </script>
+  </head>
+  <body onload = "startCode()">
+    <span id = "output"></span>
+    <br><br><hr><br>
+    <input type = "text" id = "input">
+    <input type = "button" value = "Enter and Next" onclick = "checkAnswers()">
+    <br><br><hr><br>
+    <span id = "output2"></span>
+  </body>
+</html>
